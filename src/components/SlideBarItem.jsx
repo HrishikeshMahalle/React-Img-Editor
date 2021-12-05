@@ -5,8 +5,7 @@ export default function SlideBarItem({name, active, handleClick}) {
         <div>
             <button  
             onClick={handleClick}
-            className={`sidebar-item 
-            ${active ? "active" : "" }`}
+            className={`sidebar-item ${active ? 'active' : '' }`}
             >{name}</button>
         </div>
     )
