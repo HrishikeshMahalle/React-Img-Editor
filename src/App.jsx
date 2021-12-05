@@ -121,24 +121,23 @@ function handleSliderchange({target}) {
     return {filter: filters.join(' '), backgroundImage:`url(${image})`}
   }
   
-  console.log(getImageStyle().filter)
+  
   
   const imageHandle = (e) => {
     if(e.target.files && e.target.files[0]){
       setImage(URL.createObjectURL(e.target.files[0]))
     }
   }
- 
-
-
-
-
-
 
   return (
+    <>
+    <div className="header">
+      Image Editor
+    </div>
+    
     <div className="container">
+    
        <div className="main-image" style={getImageStyle(image)} >
-        Image
        
        </div>
        <div className="sidebar">
@@ -155,14 +154,9 @@ function handleSliderchange({target}) {
             onChange={imageHandle}
             className='sidebar-item'
             />
-          <button
-            className='sidebar-item'
-            
-            
-          >Download now</button>
        </div>
 
-       <Canvas imageStyle={getImageStyle().filter} photo={image}/>
+       <Canvas imageStyle={getImageStyle().filter} photo={image} />
 
         
        <Slider
@@ -172,6 +166,7 @@ function handleSliderchange({target}) {
          handleChange={handleSliderchange}
        />
     </div>
+    </>
   );
 }
 
